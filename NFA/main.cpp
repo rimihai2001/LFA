@@ -54,7 +54,25 @@ int main()
         send = 1;
         bool ok = 0;
         cout << "Status: Se verifica... " << endl;
-
+        if( cuvant[0] == '-' and strlen(cuvant) == 1 )
+        {
+            //verificare cuvant vid
+            bool initfin=0;
+            for( int k = 1 ;  k <= f ; k++ )
+                {
+                    if( stare_initiala == stari_finale[k] ) //daca starea initiala e stare finala
+                    {
+                        fout << "DA" << endl;
+                        fout << "Traseu: " << stare_initiala << endl;
+                        k = f + 1;
+                        initfin = 1;
+                    }
+                }
+            if( initfin==0 ) //daca nu e stare finala
+                fout << "NU" << endl;
+            ok=1;
+            cout << "Status: Verificare finalizata!" << endl << endl;
+        }
         while( ok == 0 )
         {
             if( sstart > send )
